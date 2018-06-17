@@ -2,6 +2,7 @@
   position: absolute;
   z-index: -1;
   margin-bottom: 500px;
+  top: 0px;
 }
 
 .image {

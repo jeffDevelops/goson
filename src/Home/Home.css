@@ -16,3 +16,28 @@
   display: flex;
   justify-content: space-around;
 }
+
+.hero_logo {
+  position: absolute;
+  top: -5vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 45%;
+  max-width: 750px;
+  min-width: 300px;
+}
+
+.mission_statement_container {
+  margin-top: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+}
+
+#mission_statement {
+  max-width: 1000px;
+  display: block;
+  margin: 0 auto;
+}

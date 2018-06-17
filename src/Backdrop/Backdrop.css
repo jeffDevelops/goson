@@ -1,16 +1,19 @@
 .backdrop {
   position: absolute;
   z-index: -1;
-  margin-bottom: 500px;
   top: 0px;
 }
 
 .image {
   max-width: 280px;
-  height: 160px;
+  height: 130px;
   width: 50%;
   filter: grayscale(100%);
-  margin-bottom: 100px;
+  margin-bottom: 65px;
+}
+
+@media(min-width: 561px) {
+  .image { height: 150px }
 }
 
 @media(min-width: 561px) and (max-width: 840px) {

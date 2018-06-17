@@ -19,13 +19,13 @@
 
 .hero_logo {
   position: absolute;
-  top: -5vh;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
   width: 45%;
-  max-width: 750px;
+  max-width: 650px;
   min-width: 300px;
 }
 

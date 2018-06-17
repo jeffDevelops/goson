@@ -6,20 +6,33 @@ import Col from 'muicss/lib/react/col';
 
 import './Backdrop.css';
 
-export default function Backdrop() {
+const Backdrop = (props) => {
   const images = [];
-
-  for (let i = 0; i < 10; i++) {
-    for (let j = 1; j <= 20; j++) {
-      images.push({ srcIndex: j, alt: `I'm In (${j})`});
+  if (props.numImages <= 20) {
+    for (let i = 0; i < props.numImages; i++) {
+      images.push({ srcIndex: i, alt: `I'm In (${i})`});
     }
+  } else {
+    const numberOfLoops = Math.floor(props.numImages / 20);
+    const remainder = props.numImages % 20;
+    for (let i = 0; i < numberOfLoops; i++) {
+      for (let j = 0; j < 20; j++) {
+        images.push({ srcIndex: j, alt: `I'm In (${j})`});
+      }
+    }
+    for (let i = 0; i < remainder; i++) {
+      images.push({ srcIndex: i, alt: `I'm In (${i})`});
+    }
+    
   }
 
   return (
     <Container className="backdrop" fluid={ true } >
       { images.map((image, index) => {
-        return <img className="image" src={ require(`./images/GoSon${image.srcIndex}.jpg`) } alt={ image.alt } key={ index } />;
+        return <img className="image" src={ require(`./images/GoSon${image.srcIndex + 1}.jpg`) } alt={ image.alt } key={ index } />;
       })}
     </Container>
   );
 }
+
+export default Backdrop;

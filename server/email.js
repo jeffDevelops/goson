@@ -27,8 +27,8 @@ module.exports = function sendEmail(photo, demographics, callback) {
 
 
   const mailOptions = {
-    from: sender.user || process.env.emailAddress,
-    to: sender.user || process.env.emailAddress,
+    from: process.env.emailAddress || sender.user,
+    to: process.env.emailAddress || sender.user,
     subject: 'GoSon.org has a new supporter!', // Subject line
     attachments: [{
       filename: photo.filename,
@@ -50,8 +50,8 @@ module.exports = function sendEmail(photo, demographics, callback) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: sender.user || process.env.emailAddress,
-      pass: sender.pass || process.env.emailPassword
+      user: process.env.emailAddress || sender.user,
+      pass: process.env.emailPassword || sender.pass
     }
   });
 

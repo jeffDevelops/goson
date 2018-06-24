@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const sender = require('./env').sender;
 
 module.exports = function sendEmail(photo, demographics, callback) {
 
@@ -22,8 +23,8 @@ module.exports = function sendEmail(photo, demographics, callback) {
 
 
   const mailOptions = {
-    from: 'jefferydreynolds@gmail.com',
-    to: 'jefferydreynolds@gmail.com',
+    from: sender.user,
+    to: sender.user,
     subject: 'GoSon.org has a new supporter!', // Subject line
     attachments: [{
       filename: photo.filename,
@@ -45,8 +46,8 @@ module.exports = function sendEmail(photo, demographics, callback) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'jefferydreynolds@gmail.com',
-      pass: 'drmfsltdA440!'
+      user: sender.user,
+      pass: sender.pass
     }
   });
 

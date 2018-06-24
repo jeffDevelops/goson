@@ -19,13 +19,24 @@ const Button = styled.button`
   ${props => props.callToAction && css`
     font-size: 4em;
     font-family: 'Ranger';
-    padding: 30px 150px;
+    padding: 30px 80px;
+    border: 3px solid #fff;
+    width: 80%;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    outline: none;
 
-    &:hover {
+    &:hover,  &:active, &:focus {
       transition: all .4s;
       background-color: rgba(255, 255, 255, 1);
       border-color: rgba(255, 255, 255, 1);
       color: rgba(20, 20, 20, 1);
+    }
+
+    @media (max-width: 700px) {
+      font-size: 2em;
+      padding: 25px;
     }
   `}
 

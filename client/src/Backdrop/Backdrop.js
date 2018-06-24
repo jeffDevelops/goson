@@ -1,8 +1,6 @@
 import React from 'react';
 
 import Container from 'muicss/lib/react/container';
-import Row from 'muicss/lib/react/row';
-import Col from 'muicss/lib/react/col';
 
 import './Backdrop.css';
 
@@ -27,7 +25,7 @@ const Backdrop = (props) => {
   }
 
   return (
-    <Container className="backdrop" fluid={ true } >
+    <Container className="backdrop" fluid={ true } style={{ padding: 0 }}>
       { images.map((image, index) => {
         return <img className="image" src={ require(`./images/GoSon${image.srcIndex + 1}.jpg`) } alt={ image.alt } key={ index } />;
       })}

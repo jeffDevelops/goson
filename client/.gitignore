@@ -1,7 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-server/photo_submissions/*
-
 # dependencies
 /node_modules
 
@@ -21,5 +19,3 @@ server/photo_submissions/*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-.vscode

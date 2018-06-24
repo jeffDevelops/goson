@@ -11,7 +11,11 @@ module.exports = function sendEmail(photo, demographics, callback) {
   let altCities;
 
   if (Object.keys(demographics.locationData).length > 0) {
-    altCities = generateAlternateCities(demographics.locationData.alternateCities);
+    if (typeof(demographics.locationData) === 'object') {
+      altCities = generateAlternateCities(demographics.locationData.alternateCities);
+    } else {
+      altCities = demographics.locationData;
+    }
   } else {
     demographics.locationData.lat = nA; 
     demographics.locationData.lng = nA; 

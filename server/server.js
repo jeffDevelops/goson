@@ -7,19 +7,19 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 const axios = require('axios');
-const Busboy = require('busboy');
 
-const cloudinary = require('cloudinary');
+
+// const cloudinary = require('cloudinary');
   
-let config;
-if (process.env.NODE_ENV !== 'prod') {
-  config = require('./env').cloudinary;
-}
-cloudinary.config({
-  cloud_name: config.cloud_name || process.env.cloud_name,
-  api_key:    config.api_key || process.env.api_key,
-  api_secret: config.api_secret || process.env.api_secret
-});
+// let config;
+// if (process.env.NODE_ENV !== 'prod') {
+//   config = require('./env').cloudinary;
+// }
+// cloudinary.config({
+//   cloud_name: config.cloud_name || process.env.cloud_name,
+//   api_key:    config.api_key || process.env.api_key,
+//   api_secret: config.api_secret || process.env.api_secret
+// });
 
 const generateLocationData = require('./demographicInfo');
 const sendEmail = require('./email');

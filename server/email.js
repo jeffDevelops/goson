@@ -1,5 +1,9 @@
 const nodemailer = require('nodemailer');
-const sender = require('./env').sender;
+
+let sender;
+if (process.env.NODE_ENV !== 'prod') {
+  sender = require('./env').sender;
+}
 
 module.exports = function sendEmail(photo, demographics, callback) {
 

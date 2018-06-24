@@ -1,5 +1,11 @@
 const axios = require('axios');
-const zipcodeAPIKey = require('./env').zipcodeAPIKey || process.env.zipcodeAPIKey;
+
+let zipcodeAPIKey;
+if (process.env.NODE_ENV !== 'prod') {
+  zipcodeAPIKey = require('./env').zipcodeAPIKey;
+} else {
+  zipcodeAPIKey = process.env.zipcodeAPIKey;
+}
 
 async function getLocationInformation(zipcode) {
   return await axios.get(`https://www.zipcodeapi.com/rest/${zipcodeAPIKey}/info.json/${zipcode}/degrees`);

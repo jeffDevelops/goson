@@ -32,7 +32,7 @@ module.exports = function sendEmail(photo, demographics, callback) {
     subject: 'GoSon.org has a new supporter!', // Subject line
     attachments: [{
       filename: photo.filename,
-      path: photo.path
+      content: photo.content
     }],
     html: `
       <p><strong>Email:</strong> ${demographics.email}</p>

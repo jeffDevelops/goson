@@ -109,9 +109,9 @@ export default class Home extends Component {
         payload.append(key, rest[key]);
       }
       payload.append('image', image);
-      this.fileInputKey = new Date(); // Hack to ensure a ReactDOM renders a new file input to reset the input
+      // this.fileInputKey = new Date(); // Hack to ensure a ReactDOM renders a new file input to reset the input
 
-      this.setState({ zipcode: '', story: '', age: '', email: '', insta: '' });
+      // this.setState({ zipcode: '', story: '', age: '', email: '', insta: '' });
 
       return post('/email', payload)
         .then(response => console.log(response))

@@ -25,6 +25,9 @@ module.exports = function sendEmail(photo, demographics, callback) {
   if (!demographics.age) demographics.age = nA;
   if (!demographics.zipcode) demographics.zipcode = nA;
 
+  console.log(process.env.emailAddress);
+  console.log(process.env.emailPassword);
+
 
   const mailOptions = {
     from: process.env.emailAddress || sender.user,

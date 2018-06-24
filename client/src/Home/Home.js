@@ -230,9 +230,8 @@ export default class Home extends Component {
             <Header justify="right" >Mission<span style={{ fontFamily: 'Karla, sans-serif' }}>:</span></Header>
             <Text>
               <span style={{ textTransform: 'none', fontWeight: '700', fontSize: '1em', fontStyle: 'normal' }}>
-                Go Son
-              </span> 
-              builds media, travel, work, and night-life
+                Go Son 
+              </span> builds media, travel, work, and night-life
               structures in philanthropic and creative capacities
               for gay men who desire healthful, connected lives.
             </Text>

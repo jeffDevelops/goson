@@ -35,13 +35,15 @@ module.exports = function sendEmail(photo, demographics, callback) {
   if (!demographics.age) demographics.age = nA;
   if (!demographics.zipcode) demographics.zipcode = nA;
 
-  console.log(process.env.emailAddress);
-  console.log(process.env.emailPassword);
+  const emailAddress = process.env.emailAddress || sender.user;
+  const emailPassword = process.env.emailPassword || sender.pass;
 
+  console.log(emailAddress);
+  console.log(emailPassword);
 
   const mailOptions = {
-    from: process.env.emailAddress || sender.user,
-    to: process.env.emailAddress || sender.user,
+    from: emailAddress,
+    to: 'james@goson.org',
     subject: 'GoSon.org has a new supporter!', // Subject line
     attachments: [{
       filename: photo.filename,
@@ -63,8 +65,8 @@ module.exports = function sendEmail(photo, demographics, callback) {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.emailAddress || sender.user,
-      pass: process.env.emailPassword || sender.pass
+      user: emailAddress,
+      pass: emailPassword
     }
   });
 

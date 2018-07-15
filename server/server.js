@@ -11,7 +11,6 @@ const enforce = require('express-sslify');
 
 app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
-
 // const cloudinary = require('cloudinary');
   
 // let config;

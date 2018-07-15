@@ -93,6 +93,124 @@ h1#story {
   margin: auto;
 }
 
+#team {
+  padding: 50px;
+}
+
+#team .mui-row {
+  margin-top: -15px;
+  padding: 0;
+}
+
+.team_member.mui-col-lg-6.mui-col-xs-12 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team_member.james {
+  background-image: url('../assets/collateral/james.png');
+}
+
+.team_member.jeff {
+  background-image: url('../assets/collateral/jeff.png');
+}
+
+.team_member {
+  filter: grayscale(100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center -120px;
+  min-height: 1000px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.team_member .info {
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 200px;
+}
+
+.info h1 {
+  font-size: 3em;
+  text-align: center;
+}
+
+.info p {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.info .description {
+  font-family: 'Karla';
+  margin: 10px auto 0 auto;
+  text-align: center;
+  font-size: 1.2em;
+  letter-spacing: .05em;
+  width: 50%;
+}
+
+@media(min-width: 1401px) and (max-width: 1700px) {
+  .team_member .info {
+    position: absolute;
+    bottom: 225px;
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1400px) {
+  #team .mui-row {
+    margin-top: 25px;
+  }
+
+  .team_member .info {
+    position: absolute;
+    bottom: 400px;
+  }
+
+  .info .description {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media(min-width: 801px) and (max-width: 991px) {
+
+  .team_member {
+    min-height: 700px;
+  }
+
+  .team_member .info {
+    position: absolute;
+    bottom: 75px;
+  }
+
+  .info .description {
+    width: 90%;
+    margin: 10px auto 0;
+  }
+}
+
+@media(min-width: 701px) and (max-width: 800px) {
+  .team_member {
+    min-height: 600px;
+  }
+
+  .team_member .info {
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .info .description {
+    margin: 10px auto;
+    width: 90%;
+  }
+}
 
 @media(max-width: 700px) {
   h1#story {
@@ -126,10 +244,58 @@ h1#story {
     width: 90% !important;
     margin: 0 auto 15px auto !important;
   }
+
+  .team_member.mui-col-lg-6.mui-col-xs-12 {
+    margin-top: 25px;
+    background-position: center -50px;
+  }
+
+  .team_member {
+    min-height: 650px;
+  }
+
+  #team h1 {
+    margin-bottom: 0px;
+  }
+
+  .team_member .info {
+    position: absolute;
+    bottom: 50px;
+  }
+  
+  .info h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .info .description {
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+  }
 }
 
 @media(max-width: 400px) {
   #james_illustration {
     transform: scale(2.8);
+  }
+
+  #team {
+    padding: 0;
+  }
+
+  #team .section_header {
+    padding: 50px;
+  }
+
+  .team_member {
+    min-height: 600px;
+    background-size: contain;
+  }
+
+  .team_member .info {
+    position: absolute;
+    bottom: 50px;
   }
 }

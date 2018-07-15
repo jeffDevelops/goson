@@ -3,8 +3,6 @@ import autoBind from 'react-autobind';
 
 import { post } from '../helpers/http';
 
-import logo from '../assets/collateral/GoSon_Logo_Primary.png';
-
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
@@ -22,6 +20,9 @@ import FileInput from '../styled/FileInput';
 import Backdrop from '../Backdrop/Backdrop';
 import Group from '../components/Group';
 
+import logo from '../assets/collateral/GoSon_Logo_Primary.png';
+import james from '../assets/collateral/james.png';
+import jeff from '../assets/collateral/jeff.png';
 import './Home.css';
 
 export default class Home extends Component {
@@ -62,7 +63,6 @@ export default class Home extends Component {
 
   preventInvalidKeys(event, callee) {
     const key = event.which;
-    console.log(key);
     if (key === 101 || key === 69 || key === 43 || key === 45) {
       event.preventDefault();
     }
@@ -74,24 +74,8 @@ export default class Home extends Component {
     }
   }
 
-  updateZipcode(value) {
-    return this.setState({ zipcode: value });
-  }
-
-  updateAge(value) {
-    return this.setState({ age: value });
-  }
-
-  updateEmail(value) {
-    return this.setState({ email: value });
-  }
-
-  updateInsta(value) {
-    return this.setState({ insta: value })
-  }
-
-  updateStory(value) {
-    return this.setState({ story: value });
+  updateInput(event) {
+    this.setState({ [event.target.name]: event.target.value }, () => console.log(this.state));
   }
 
   updateImage(files) {
@@ -140,17 +124,17 @@ export default class Home extends Component {
             <div style={ styles.inputGroup }>
               <Label htmlFor="email">Email</Label>
               <Input type="email" placeholder="Email (optional)"
-                id="email" value={ this.state.email || ''}
-                onChange={ (e) => this.updateEmail(e.target.value) }
+                id="email" value={ this.state.email || ''} name="email"
+                onChange={ (e) => this.updateInput(e) }
               />
             </div>
 
             <div style={ styles.inputGroup }>
               <Label htmlFor="age" right>Age</Label>
               <Input type="number" placeholder="Age (optional)"
-                id="age" right value={ this.state.age || ''}
+                id="age" right value={ this.state.age || ''} name="age"
                 onKeyPress={ (e) => this.preventInvalidKeys(e, 'AGE') }
-                onChange={ (e) => this.updateAge(e.target.value) }
+                onChange={ (e) => this.updateInput(e) }
               />
             </div>
 
@@ -161,8 +145,8 @@ export default class Home extends Component {
             <div style={ styles.inputGroup }>
               <Label htmlFor="insta">Instagram Handle</Label>
               <Input type="text" style={{ paddingLeft: '40px'}} placeholder="Instagram Handle (optional)"
-                id="insta" value={ this.state.insta || ''}
-                onChange={ (e) => this.updateInsta(e.target.value) }
+                id="insta" value={ this.state.insta || ''} name="insta"
+                onChange={ (e) => this.updateInput(e) }
               />
               <span style={{ color: '#fff', position: 'absolute', top: '46px', left: '15px', fontSize: '1.3em' }}>@</span>
 
@@ -171,9 +155,9 @@ export default class Home extends Component {
             <div style={ styles.inputGroup }>
               <Label htmlFor="zipcode" right>Zipcode</Label>
               <Input type="number" placeholder="Zip Code (optional)"
-                id="zipcode" right value={ this.state.zipcode || ''}
+                id="zipcode" right value={ this.state.zipcode || ''} name="zipcode"
                 onKeyPress={ (e) => this.preventInvalidKeys(e, 'ZIPCODE') }
-                onChange={ (e) => this.updateZipcode(e.target.value) }
+                onChange={ (e) => this.updateInput(e) }
               />
             </div>
             
@@ -182,8 +166,8 @@ export default class Home extends Component {
           <div style={{ margin: 'auto', width: '80%' }}>
             <label htmlFor="story">Your Story</label>
             <Textarea id="story" value={ this.state.story || ''}
-              required placeholder="Tell us your story"
-              onChange={ (e) => this.updateStory(e.target.value) }
+              required placeholder="Tell us your story" name="story"
+              onChange={ (e) => this.updateInput(e) }
             ></Textarea>
           </div>
 
@@ -274,6 +258,42 @@ export default class Home extends Component {
           </Container>
 
         </Section>
+
+        <Section id="team" bgColor="#fff" style={{ overflow: 'hidden', boxSizing: 'border-box' }}>
+          <Header className="section_header" color="#000">Team</Header>
+
+          <Container fluid={ true }>
+            <Row>
+
+              <Col xs="12" lg="6" className="team_member james">
+                <div className="info">
+                  <Header color="#000">James Markel</Header>
+                  <CenteredText>Founder</CenteredText>
+                  <p className="description">
+                    GoSon O.G. and visionary, James Markel is amazeballs, and I'm gonna let him write this, but I think he'd do well to make "GoSon O.G." his job
+                    title.
+                  </p>
+                </div>
+              </Col>
+
+              <Col xs="12" lg="6" className="team_member jeff">
+                <div className="info">
+                  <Header color="#000">Jeff Reynolds</Header>
+                  <CenteredText>Web Developer</CenteredText>
+                  <p className="description">
+                    Jeff is psyched to be a part of the GoSon community. He is a full-stack JavaScript developer and web designer from Denver, CO.
+                    He's passionate about scaling design systems, and specializes in React, Node.js, GraphQL, and cross-platform Electron app development.
+                  </p>
+                </div>
+              </Col>
+
+            </Row>
+          </Container>
+
+
+        </Section>
+
+
 
         {/* <div className="call_to_action_buttons">
           <Button callToAction >I'm In</Button>

@@ -94,7 +94,7 @@ h1#story {
 }
 
 #team {
-  padding: 50px;
+  padding: 50px 50px 0 50px;
 }
 
 #team .mui-row {
@@ -119,16 +119,14 @@ h1#story {
 .team_member {
   filter: grayscale(100%);
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center -120px;
-  min-height: 1000px;
+  background-size: cover;
+  background-position: center -50px;
+  min-height: 600px;
   position: relative;
   box-sizing: border-box;
 }
 
 .team_member .info {
-  position: absolute;
-  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -153,13 +151,16 @@ h1#story {
   text-align: center;
   font-size: 1.2em;
   letter-spacing: .05em;
-  width: 50%;
+  width: 80%;
+}
+
+.info .description:last-of-type {
+  margin-bottom: 50px;
 }
 
 @media(min-width: 1401px) and (max-width: 1700px) {
   .team_member .info {
-    position: absolute;
-    bottom: 225px;
+
   }
 }
 
@@ -169,8 +170,7 @@ h1#story {
   }
 
   .team_member .info {
-    position: absolute;
-    bottom: 400px;
+
   }
 
   .info .description {
@@ -186,8 +186,7 @@ h1#story {
   }
 
   .team_member .info {
-    position: absolute;
-    bottom: 75px;
+
   }
 
   .info .description {
@@ -202,8 +201,7 @@ h1#story {
   }
 
   .team_member .info {
-    position: absolute;
-    bottom: 20px;
+    
   }
 
   .info .description {
@@ -251,7 +249,8 @@ h1#story {
   }
 
   .team_member {
-    min-height: 650px;
+    min-height: 250px;
+    background-size: contain;
   }
 
   #team h1 {
@@ -259,8 +258,8 @@ h1#story {
   }
 
   .team_member .info {
-    position: absolute;
-    bottom: 50px;
+    background-size: cover;
+    min-height: 400px;
   }
   
   .info h1 {
@@ -285,17 +284,20 @@ h1#story {
     padding: 0;
   }
 
+  #team h1.section_header {
+    padding: 50px 50px 25px 50px;
+  }
+
   #team .section_header {
     padding: 50px;
   }
 
   .team_member {
-    min-height: 600px;
-    background-size: contain;
+    min-height: 350px;
+    background-size: cover;
   }
 
   .team_member .info {
-    position: absolute;
-    bottom: 50px;
+
   }
 }

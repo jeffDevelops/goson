@@ -117,7 +117,7 @@ export default class Home extends Component {
   checkIfSentAndRenderContent() {
     if (!this.state.formSubmitted) {
       return (
-        <form onSubmit={ (e) => this.submitForm(e) } style={{ display: 'block', margin: '10px auto 50px auto', width: '100%' }}>
+        <form onSubmit={ (e) => this.submitForm(e) } style={{ display: 'block', margin: '200px auto 150px auto', width: '100%' }}>
 
           <div style={ styles.formGroup }>
 
@@ -165,7 +165,7 @@ export default class Home extends Component {
 
           <div style={{ margin: 'auto', width: '80%' }}>
             <label htmlFor="story">Your Story</label>
-            <Textarea id="story" value={ this.state.story || ''}
+            <Textarea id="story" style={{ height: '200px' }} value={ this.state.story || ''}
               required placeholder="Tell us your story" name="story"
               onChange={ (e) => this.updateInput(e) }
             ></Textarea>
@@ -265,24 +265,31 @@ export default class Home extends Component {
           <Container fluid={ true }>
             <Row>
 
-              <Col xs="12" lg="6" className="team_member james">
+              <Col xs="12" lg="6"> 
+                <div className="team_member james"></div>
                 <div className="info">
                   <Header color="#000">James Markel</Header>
                   <CenteredText>Founder</CenteredText>
                   <p className="description">
-                    GoSon O.G. and visionary, James Markel is amazeballs, and I'm gonna let him write this, but I think he'd do well to make "GoSon O.G." his job
-                    title.
+                    James is a visionary and creative force for change within the gay male community in America. Previously an antique and art dealer, he
+                    partnered with numerous galleries gaining him Orange County, California's "Man of Style" by age of 21. James is now shifting his love for
+                    art and design towards a new purpose. GoSon is currently working towards building media, travel, work, and nightlife structures, in philanthropic
+                    and creative capacities for Gay men who desire healthy, connected lives. This summer, he is developing a documentary film that explores the unique,
+                    diverse identities of the largely subsetted Gay male American population.
                   </p>
                 </div>
               </Col>
 
-              <Col xs="12" lg="6" className="team_member jeff">
+              <Col xs="12" lg="6">
+                <div className="team_member jeff"></div>
                 <div className="info">
                   <Header color="#000">Jeff Reynolds</Header>
                   <CenteredText>Web Developer</CenteredText>
                   <p className="description">
                     Jeff is psyched to be a part of the GoSon community. He is a full-stack JavaScript developer and web designer from Denver, CO.
-                    He's passionate about scaling design systems, and specializes in React, Node.js, GraphQL, and cross-platform Electron app development.
+                    He's passionate about scaling design systems, and specializes in React, Node.js, GraphQL, and cross-platform Electron app development. He discovered
+                    his love for teaching as a teaching assistant at the University of Denver's coding bootcamp. He is excited to collaborate with GoSon, because it will
+                    create an atmosphere to empower gay men to be the best that they can be, no matter what industry they find themselves in.
                   </p>
                 </div>
               </Col>
@@ -292,12 +299,6 @@ export default class Home extends Component {
 
 
         </Section>
-
-
-
-        {/* <div className="call_to_action_buttons">
-          <Button callToAction >I'm In</Button>
-        </div> */}
 
       </div>
     );
